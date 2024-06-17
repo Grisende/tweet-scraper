@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  twitter-scraper:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - FLASK_APP=app
+    env_file: .env
+    volumes:
+      - './:/var/www/twitter-scraper'
+    ports:
+      - "5000:5000"
