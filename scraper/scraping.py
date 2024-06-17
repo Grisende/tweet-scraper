@@ -194,23 +194,25 @@ class Scraping():
 
         if len(self.data) >= self.max_tweets or no_tweets_limit:
             print("Scraping Finalizado")
-            data = {
-            "Name": [tweet[0] for tweet in self.data],
-            "Handle": [tweet[1] for tweet in self.data],
-            "Timestamp": [tweet[2] for tweet in self.data],
-            "Verified": [tweet[3] for tweet in self.data],
-            "Content": [tweet[4] for tweet in self.data],
-            "Comments": [tweet[5] for tweet in self.data],
-            "Retweets": [tweet[6] for tweet in self.data],
-            "Likes": [tweet[7] for tweet in self.data],
-            "Analytics": [tweet[8] for tweet in self.data],
-            "Tags": [tweet[9] for tweet in self.data],
-            "Mentions": [tweet[10] for tweet in self.data],
-            "Emojis": [tweet[11] for tweet in self.data],
-            "Profile Image": [tweet[12] for tweet in self.data],
-            "Tweet Link": [tweet[13] for tweet in self.data],
-            "Tweet ID": [f"tweet_id:{tweet[14]}" for tweet in self.data],
-        }
+            data = []
+            for tweet in self.data:
+                data.append ({
+                "Name": tweet[0],
+                "Handle": tweet[1],
+                "Timestamp": tweet[2],
+                "Verified": tweet[3],
+                "Content": tweet[4],
+                "Comments": tweet[5],
+                "Retweets": tweet[6],
+                "Likes": tweet[7],
+                "Analytics": tweet[8],
+                "Tags": tweet[9],
+                "Mentions": tweet[10],
+                "Emojis": tweet[11],
+                "Profile Image": tweet[12],
+                "Tweet Link": tweet[13],
+                "Tweet ID": tweet[14],
+            })
             print(json.dumps(data, indent=4))
         else:
             print("Scraping Incompleto")

@@ -33,5 +33,5 @@ scraping = Scraping()
 
 scraping.scrape_tweets(
     max_tweets=10,
-    scrape_username="Mimese_"
+    scrape_username="pobredasofertas"
 )
